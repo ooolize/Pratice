@@ -1,7 +1,6 @@
 set(SOURCE main.cpp)
 
-# set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR}/3rdparty/benchmark/build)
-set(benchmark_DIR ${PROJECT_SOURCE_DIR}/3rdparty/benchmark/build)
+# set(benchmark_DIR ${PROJECT_SOURCE_DIR}/3rdparty/benchmark/build)
 
 find_package(benchmark REQUIRED)
 add_executable(polomorpy_test ${SOURCE})

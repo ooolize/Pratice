@@ -21,7 +21,7 @@ endif()
 
 # 添加全局包含路径
 include_directories(${PROJECT_SOURCE_DIR}/include)
-
+include_directories(${PROJECT_SOURCE_DIR}/3rdparty/benchmark/include)
 # 添加全局共享库路径
 link_directories(${PROJECT_SOURCE_DIR}/lib)
 
