@@ -25,13 +25,13 @@ static std::default_random_engine engine;
 // 创建均匀分布对象，生成0到100之间的随机整数
 static std::uniform_int_distribution<int> distribution(10, 100);
 static void TEST_ADD_1(benchmark::State& state) {
-  for (auto _ : state) {
+  for (auto s : state) {  // NOLINT
     auto res = add1(Matrix(len, len, distribution(engine)),
                     Matrix(len, len, distribution(engine)));
   }
 }
 static void TEST_ADD_2(benchmark::State& state) {
-  for (auto _ : state) {
+  for (auto s : state) {  // NOLINT
     auto res = add2(Matrix(len, len, distribution(engine)),
                     Matrix(len, len, distribution(engine)));
   }
@@ -40,7 +40,7 @@ static void TEST_ADD_2(benchmark::State& state) {
 static void TEST_MULTI_2(benchmark::State& state) {
   auto m1 = Matrix(row, col, distribution(engine));
   auto m2 = Matrix(col, row, distribution(engine));
-  for (auto _ : state) {
+  for (auto s : state) {  // NOLINT
     auto res = multi2(m1, m2);
   }
 }
@@ -48,7 +48,7 @@ static void TEST_MULTI_2(benchmark::State& state) {
 static void TEST_MULTI_3(benchmark::State& state) {
   auto m1 = Matrix(row + offset, col + offset, distribution(engine));
   auto m2 = Matrix(col + offset, row + offset, distribution(engine));
-  for (auto _ : state) {
+  for (auto s : state) {  // NOLINT
     auto res = multi2(m1, m2);
   }
 }

@@ -1,0 +1,5 @@
+# add_subdirectory(random_number)
+# add_subdirectory(benchmark_test_ex)
+# add_subdirectory(polymorph_test)
+# add_subdirectory(coroutine)
+add_subdirectory(generator)

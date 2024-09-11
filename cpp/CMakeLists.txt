@@ -7,8 +7,10 @@ cmake_minimum_required(VERSION 3.5)
 # 如果windows下想使用g++ 需要编译时 cmake -G "MinGW Makefiles" ..
 # 否则默认使用Visual Studio 17 2022 生成器
 # 设置使用的编译器
-set(CMAKE_CXX_COMPILER g++)
-
+set(CMAKE_CXX_COMPILER clang++)
+# 设置c++标准
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
 # 设置项目名称
 project(pattern)
 
@@ -20,8 +22,7 @@ elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
 endif()
 
 # 添加全局包含路径
-include_directories(${PROJECT_SOURCE_DIR}/include)
-include_directories(${PROJECT_SOURCE_DIR}/3rdparty/benchmark/include)
+include_directories(${PROJECT_SOURCE_DIR}/include ${PROJECT_SOURCE_DIR})
 # 添加全局共享库路径
 link_directories(${PROJECT_SOURCE_DIR}/lib)
 
